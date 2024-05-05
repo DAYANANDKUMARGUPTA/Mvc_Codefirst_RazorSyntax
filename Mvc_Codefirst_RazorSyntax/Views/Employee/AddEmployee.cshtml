@@ -1,0 +1,86 @@
+﻿@model Mvc_Codefirst_RazorSyntax.Models.tblEmployee
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2>AddEmployeeHere</h2>
+
+@using (Html.BeginForm("AddEmployee","Employee",FormMethod.Post))
+{
+<table>
+    @Html.HiddenFor(Model => Model.empid)
+    <tr>
+        <td>Name:</td>
+        <td>@Html.TextBoxFor(Model => Model.name)</td>
+    </tr>
+
+    <tr>
+        <td>City:</td>
+        <td>@Html.TextBoxFor(Model => Model.city)</td>
+    </tr>
+
+    <tr>
+        <td>Salary:</td>
+        <td>@Html.TextBoxFor(Model => Model.salary)</td>
+    </tr>
+
+    <tr>
+        <td>Country:</td>
+        <td>@Html.DropDownListFor(Model => Model.country, new SelectList(ViewBag.ctr, "cid", "cname"), "--Select--", new { onchange="BindState()" } )</td>
+    </tr>
+
+    <tr>
+        <td>State:</td>
+        <td>@Html.DropDownListFor(Model => Model.state, new SelectList(ViewBag.stt,"sid","sname"), "--Select--")</td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><input type="submit" value="@ViewBag.pp" /></td>
+    </tr>
+</table>
+
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    function BindState() {
+        if ($("#empid").val() > 0) {
+            $.ajax({
+                url: '../StateGet',
+                type: 'post',
+                data: { A: $("#country").val() },
+                success: function (data) {
+                    $("#state").empty();
+                    $("#state").append($('<option></option>').html("--Select--").val(0));
+                    for (var i = 0; i < data.length; i++) {
+                        $("#state").append($('<option></option>').html(data[i].sname).val(data[i].sid));
+                    }
+
+                },
+                error: function () {
+                    alert('State not bind !!');
+                }
+
+            });
+        }
+        else {
+            $.ajax({
+                url: '../Employee/StateGet',
+                type: 'post',
+                data: { A: $("#country").val() },
+                success: function (data) {
+                    $("#state").empty();
+                    $("#state").append($('<option></option>').html("--Select--").val(0));
+                    for (var i = 0; i < data.length; i++) {
+                        $("#state").append($('<option></option>').html(data[i].sname).val(data[i].sid));
+                    }
+
+                },
+                error: function () {
+                    alert('State not bind !!');
+                }
+
+            });
+        }
+    }
+</script>

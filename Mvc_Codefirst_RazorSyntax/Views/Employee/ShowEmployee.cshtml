@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Mvc_Codefirst_RazorSyntax.Models.tblEmployee1>
+@{
+    ViewBag.Title = "ShowEmployee";
+}
+
+<h2>---WELCOME TO DAYANAND KUMAR PAGE--</h2>
+
+
+
+<table style="background-color:darkkhaki;color:black;width:1000px">
+    <tr style="background-color:orangered;color:black;height:30px">
+        <th>Employee Id </th>
+        <th>Employee Name </th>
+        <th>Employee City </th>
+        <th>Employee Salary </th>
+        <th>Employee Country </th>
+        <th>Employee State </th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var a in Model) 
+    {
+<tr>
+    <td>@a.empid</td>
+    <td>@a.name</td>
+    <td>@a.city</td>
+    <td>@a.salary</td>
+    <td>@a.country</td>
+    <td>@a.state</td>
+    <td>@Html.ActionLink("Delete", "DeleteEmployee", new { id = a.empid })</td>
+    <td>@Html.ActionLink("Edit", "AddEmployee", new { id = a.empid })</td>
+
+</tr>
+    }
+</table>

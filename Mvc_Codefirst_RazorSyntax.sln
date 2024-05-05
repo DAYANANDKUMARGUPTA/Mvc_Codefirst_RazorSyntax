@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34407.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mvc_Codefirst_RazorSyntax", "Mvc_Codefirst_RazorSyntax\Mvc_Codefirst_RazorSyntax.csproj", "{DAE88E5C-C7DC-4749-B82F-C720D79F0CDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAE88E5C-C7DC-4749-B82F-C720D79F0CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE88E5C-C7DC-4749-B82F-C720D79F0CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE88E5C-C7DC-4749-B82F-C720D79F0CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE88E5C-C7DC-4749-B82F-C720D79F0CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89DFBDF1-EE63-4885-9A51-48A2544CCD57}
+	EndGlobalSection
+EndGlobal
